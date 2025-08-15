@@ -45,12 +45,6 @@ const BookList = () => {
         </Alert>
       </div>
     );
-  if (allBookLoading || deleteLoading)
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
   if (deleteError)
     return (
       <div>
@@ -61,6 +55,12 @@ const BookList = () => {
             <p>Please try again.</p>
           </AlertDescription>
         </Alert>
+      </div>
+    );
+  if (allBookLoading || deleteLoading)
+    return (
+      <div>
+        <Loader />
       </div>
     );
 

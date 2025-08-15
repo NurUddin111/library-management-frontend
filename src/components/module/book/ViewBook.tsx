@@ -28,7 +28,7 @@ const ViewBook = () => {
   const [deleteBook, { isError: deleteError, isLoading: deleteLoading }] =
     useDeleteBookMutation(undefined);
 
-  if (viewError || deleteError)
+  if (viewError)
     return (
       <div className="px-4">
         <Alert variant="destructive" className="max-w-lg mx-auto mt-10">
@@ -36,7 +36,22 @@ const ViewBook = () => {
           <AlertTitle>Unable to Load Book Details</AlertTitle>
           <AlertDescription>
             <p>
-              Something went wrong while fetching the book. Please try again.
+              Something went wrong while loading the book details. Please try
+              again.
+            </p>
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  if (viewError || deleteError)
+    return (
+      <div className="px-4">
+        <Alert variant="destructive" className="max-w-lg mx-auto mt-10">
+          <AlertCircleIcon className="h-5 w-5" />
+          <AlertTitle>Failed to delete book!</AlertTitle>
+          <AlertDescription>
+            <p>
+              Something went wrong while deleting the book. Please try again.
             </p>
           </AlertDescription>
         </Alert>

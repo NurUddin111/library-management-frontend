@@ -19,7 +19,7 @@ const DeleteBookModal = ({
 
   const handleDelete = () => {
     deleteBookHandler(bookId);
-    setConfirmText(""); // reset input after deletion
+    setConfirmText("");
   };
 
   return (

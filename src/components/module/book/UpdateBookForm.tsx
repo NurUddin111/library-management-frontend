@@ -65,7 +65,19 @@ const UpdateBookForm = () => {
         <Loader />
       </div>
     );
-  if (getError || updateError)
+  if (getError)
+    return (
+      <div>
+        <Alert variant="destructive">
+          <AlertCircleIcon />
+          <AlertTitle>Failed to load book details.</AlertTitle>
+          <AlertDescription>
+            <p>Please try again.</p>
+          </AlertDescription>
+        </Alert>
+      </div>
+    );
+  if (updateError)
     return (
       <div>
         <Alert variant="destructive">
