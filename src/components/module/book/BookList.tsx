@@ -91,7 +91,7 @@ const BookList = () => {
           </TableHeader>
 
           <TableBody>
-            {allBookData.data.map((bookData: Ibooks) => (
+            {allBookData?.data?.map((bookData: Ibooks) => (
               <TableRow
                 key={bookData._id}
                 className="hover:bg-amber-50 transition-colors duration-300"
